@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unstoppaple Mindset</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cal+Sans&family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&family=Lobster&family=Noto+Sans+JP:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cal+Sans&family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&family=Lobster&family=Noto+Sans+JP:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Special+Gothic+Expanded+One&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         max-width: 900px;
@@ -18,15 +21,12 @@
       .title {
         font-size: 40px;
         margin-top: 70px;
-        color:
-        #283149
-
+        color: #283149;
       }
       .subtitle {
         font-size: 20px;
         font-style: italic;
         color: #7f8c8d;
-        
       }
       .top-image {
         width: 100%;
@@ -66,7 +66,7 @@
         color: #7f8c8d;
         font-size: 15px;
       }
-      .main{
+      .main {
         background: #fff;
         padding: 30px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -145,11 +145,11 @@
         margin-top: 40px;
         color: #7f8c8d;
       }
-      p{
+      p {
         font-family: "Chiron Sung HK", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
       }
     </style>
   </head>
@@ -186,14 +186,14 @@
         Ford
       </div>
       <h2>1. FOUNDATIONS: THE PSYCHOLOGY OF SELF-BELIEF</h2>
-     
+
       <p>
         Neuroimaging reveals that self-confident brains show 27% more activity
         in the prefrontal cortex during challenges (Journal of Neuroscience,
         2023). Confidence is not a trait—it's a cognitive framework.
       </p>
       <h2>2. LOAD-BEARING PILLARS</h2>
-     
+
       <p>Every unstoppable mindset rests on three supports:</p>
       <ul>
         <li>
@@ -207,7 +207,7 @@
         <li><strong>Flexure Joints:</strong>Adaptability in failure</li>
       </ul>
       <h2>3. ARCHITECTURAL FLAWS TO DEMOLISH</h2>
-     
+
       <p>
         The "comparison trap" distorts mental blueprints like funhouse mirrors.
         Solution:<em> Focus on your unique structural design</em>.
@@ -216,7 +216,7 @@
     </div>
 
     <div class="comment-section">
-      <h2>BUILD THE DISCUSSION</h2>
+      <h2 class="hert" id="erryu">BUILD THE DISCUSSION</h2>
       <form class="comment-form">
         <div class="form-group">
           <label for="name">Your Name</label>
@@ -241,5 +241,27 @@
         <button type="submit" class="submit-btn">POST COMMENT</button>
       </form>
     </div>
+    <script>
+      let changable = document.querySelector("#erryu");
+      let commentForm = document.querySelector(".comment-form");
+      let username = document.querySelector("#name");
+
+      function responser(event) {
+        event.preventDefault();
+
+        // Get the current value when submitted
+        let name = username.value;
+
+        // Update the h2 with proper spacing
+        changable.innerHTML =
+          "Welcome " + name + "! Thank you for your comment, stay with Us!";
+
+        // Reset the form
+        commentForm.reset();
+      }
+
+      // Listen for form submission (better than button click)
+      commentForm.addEventListener("submit", responser);
+    </script>
   </body>
 </html>
