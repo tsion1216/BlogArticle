@@ -178,7 +178,7 @@
     </div>
     <img
       class="top-image"
-      src=" https://media.licdn.com/dms/image/v2/C5112AQEUerfKPNhTUA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520176280302?e=2147483647&v=beta&t=ALPUqHcxbo5UeEOZCqRCBpuinqYJnCW74X-BxkkG7T0"
+      src="  https://media.licdn.com/dms/image/v2/C5112AQEUerfKPNhTUA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520176280302?e=2147483647&v=beta&t=ALPUqHcxbo5UeEOZCqRCBpuinqYJnCW74X-BxkkG7T0"
       alt="    "
     />
     <div class="author">
@@ -268,16 +268,13 @@
       function responser(event) {
         event.preventDefault();
 
-        // Get the current values when submitted
         let name = username.value;
         let email = document.querySelector("#email").value;
         let commentText = document.querySelector("#comment").value;
 
-        // Update the h2 with proper spacing
         changable.innerHTML =
           "Welcome " + name + "! Thank you for your comment, stay with Us!";
 
-        // Create new comment element
         let commentDiv = document.createElement("div");
         commentDiv.className = "comment";
         commentDiv.innerHTML = `
@@ -286,14 +283,11 @@
       <small>${new Date().toLocaleString()}</small>
     `;
 
-        // Add to comments display
         document.getElementById("commentsDisplay").prepend(commentDiv);
 
-        // Reset the form
         commentForm.reset();
       }
 
-      // Listen for form submission
       commentForm.addEventListener("submit", responser);
     </script>
   </body>
