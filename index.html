@@ -151,6 +151,24 @@
         font-weight: <weight>;
         font-style: normal;
       }
+      .comment {
+        background: #f8f9fa;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border-left: 3px solid #3498db;
+      }
+      .comment h4 {
+        margin: 0 0 5px 0;
+        color: #2c3e50;
+      }
+      .comment small {
+        color: #7f8c8d;
+        font-size: 0.8em;
+      }
+      .comments-display {
+        margin-top: 30px;
+      }
     </style>
   </head>
   <body>
@@ -216,7 +234,7 @@
     </div>
 
     <div class="comment-section">
-      <h2>BUILD THE DISCUSSION</h2>
+      <h2 class="hert" id="erryu">BUILD THE DISCUSSION</h2>
       <form class="comment-form">
         <div class="form-group">
           <label for="name">Your Name</label>
@@ -240,14 +258,43 @@
 
         <button type="submit" class="submit-btn">POST COMMENT</button>
       </form>
+      <div class="comments-display" id="commentsDisplay"></div>
     </div>
     <script>
-      function acceptance() {
-        if
-        alert("Thank you for your comment,stay with Us!");
+      let changable = document.querySelector("#erryu");
+      let commentForm = document.querySelector(".comment-form");
+      let username = document.querySelector("#name");
+
+      function responser(event) {
+        event.preventDefault();
+
+        // Get all form values
+        let name = username.value;
+        let email = document.querySelector("#email").value;
+        let commentText = document.querySelector("#comment").value;
+
+        // Update the h2 with proper spacing
+        changable.innerHTML =
+          "Welcome " + name + "! Thank you for your comment, stay with Us!";
+
+        // Create new comment element
+        let commentDiv = document.createElement("div");
+        commentDiv.className = "comment";
+        commentDiv.innerHTML = `
+    <h4>${name}</h4>
+    <p>${commentText}</p>
+    <small>${new Date().toLocaleString()}</small>
+  `;
+
+        // Add to comments display
+        document.getElementById("commentsDisplay").prepend(commentDiv);
+
+        // Reset the form
+        commentForm.reset();
       }
-      let submit = document.querySelector(".submit-btn");
-      submit.addEventListener("click", acceptance);
+
+      // Listen for form submission
+      commentForm.addEventListener("submit", responser);
     </script>
   </body>
 </html>
