@@ -151,24 +151,6 @@
         font-weight: <weight>;
         font-style: normal;
       }
-      .comment {
-        background: #f8f9fa;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        border-left: 3px solid #3498db;
-      }
-      .comment h4 {
-        margin: 0 0 5px 0;
-        color: #2c3e50;
-      }
-      .comment small {
-        color: #7f8c8d;
-        font-size: 0.8em;
-      }
-      .comments-display {
-        margin-top: 30px;
-      }
     </style>
   </head>
   <body>
@@ -178,7 +160,7 @@
     </div>
     <img
       class="top-image"
-      src="  https://media.licdn.com/dms/image/v2/C5112AQEUerfKPNhTUA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520176280302?e=2147483647&v=beta&t=ALPUqHcxbo5UeEOZCqRCBpuinqYJnCW74X-BxkkG7T0"
+      src=" https://media.licdn.com/dms/image/v2/C5112AQEUerfKPNhTUA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520176280302?e=2147483647&v=beta&t=ALPUqHcxbo5UeEOZCqRCBpuinqYJnCW74X-BxkkG7T0"
       alt="    "
     />
     <div class="author">
@@ -234,7 +216,7 @@
     </div>
 
     <div class="comment-section">
-      <h2 class="hert" id="erryu">BUILD THE DISCUSSION</h2>
+      <h2>BUILD THE DISCUSSION</h2>
       <form class="comment-form">
         <div class="form-group">
           <label for="name">Your Name</label>
@@ -258,37 +240,14 @@
 
         <button type="submit" class="submit-btn">POST COMMENT</button>
       </form>
-      <div class="comments-display" id="commentsDisplay"></div>
     </div>
     <script>
-      let changable = document.querySelector("#erryu");
-      let commentForm = document.querySelector(".comment-form");
-      let username = document.querySelector("#name");
-
-      function responser(event) {
-        event.preventDefault();
-
-        let name = username.value;
-        let email = document.querySelector("#email").value;
-        let commentText = document.querySelector("#comment").value;
-
-        changable.innerHTML =
-          "Welcome " + name + "! Thank you for your comment, stay with Us!";
-
-        let commentDiv = document.createElement("div");
-        commentDiv.className = "comment";
-        commentDiv.innerHTML = `
-      <h4>${name}</h4>
-      <p>${commentText}</p>
-      <small>${new Date().toLocaleString()}</small>
-    `;
-
-        document.getElementById("commentsDisplay").prepend(commentDiv);
-
-        commentForm.reset();
+      function acceptance() {
+        if
+        alert("Thank you for your comment,stay with Us!");
       }
-
-      commentForm.addEventListener("submit", responser);
+      let submit = document.querySelector(".submit-btn");
+      submit.addEventListener("click", acceptance);
     </script>
   </body>
 </html>
